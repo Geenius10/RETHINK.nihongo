@@ -1,22 +1,16 @@
-# RETHINK. Nihongo — Final
+# RETHINK. Nihongo — Build 18
 
-A responsive, installable Japanese-learning PWA for phone, tablet and desktop.
+Performance-focused PWA build.
 
-## Core flow
-Open the app → press **Continue** → complete the session. The app prioritizes due reviews, then introduces new material automatically across kana, vocabulary, kanji, grammar and sentences.
+## What changed
+- Lesson start and Vocabulary start no longer trigger network work.
+- Only the active JLPT level loads in the background; N5–N1 are no longer parsed all at once.
+- Large legacy remote-course storage is retired.
+- Progress writes are deferred instead of synchronously serializing data after every tap.
+- Read-only checks no longer create thousands of empty SRS records.
+- Home is not fully recalculated after every answer.
+- Dynamic sentence candidates are capped to a useful working set rather than scanning the whole JLPT database repeatedly.
+- Multiple-choice answers are unique and level-local.
 
-## Adaptive learning
-Japanese→English and English→Japanese are tracked independently. Productive recall (English→Japanese) uses shorter intervals by default and adapts further to Again/Hard/Good/Easy ratings. Sentence tasks are explicitly labeled as SENTENCE.
-
-## Vocabulary / dictionary
-The offline app contains the curated course data bundled with this project. When online, Dictionary uses Jisho's word search endpoint, which is based on JMdict/JMnedict data. Search results can be added directly to the learner's personal SRS. The guided course also caches JLPT vocabulary online over time so the learning pool grows without forcing the user to browse or manage decks.
-
-JMdict is maintained by the Electronic Dictionary Research and Development Group (EDRDG): https://www.edrdg.org/jmdict/j_jmdict.html
-Jisho: https://jisho.org/
-
-## Install
-Serve this folder over HTTPS (or localhost), open it in the browser, and use the platform's Add to Home Screen / Install App command. Full dictionary search requires an internet connection; installed course content and saved learning data continue to work offline.
-
-
-## Guided progression update
-The course now uses prerequisite-based progression instead of exposing every exercise direction immediately. Beginner flow is: vocabulary recognition → grammar lesson → grammar practice → sentence reading → word production → sentence production. Sentence tasks unlock only after their required core vocabulary and grammar have been introduced. English → Japanese word production unlocks only after the easier Japanese → English direction is stable.
+## Files
+All deployable files are in this one folder. Upload them directly to the site root.
