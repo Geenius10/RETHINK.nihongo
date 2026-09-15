@@ -14,3 +14,6 @@ Performance-focused PWA build.
 
 ## Files
 All deployable files are in this one folder. Upload them directly to the site root.
+
+
+Build 19: Romaji display is guaranteed Latin-only; kana readings are transliterated and Japanese script is never shown in the Romaji field.
